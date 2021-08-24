@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<head>
+  <title>Add Users page</title>
+</head>
+<body>
+  <h1>Add an user</h1>
+  <h2>First name: <%= first_name %></h2>
+  <h2>Last name: <%= last_name %></h2>
+  <h2>Email: <%= email %></h2>
+  <form action="/users" method="post">
+    <input type="text" name="first_name" placeholder="First Name" required />
+    <input type="text" name="last_name" placeholder="Last Name" required />
+    <input type="email" name="email" placeholder="Email" required />
+    <button type="submit">Add Users</button>
+  </form>
+</body>
+</html>
