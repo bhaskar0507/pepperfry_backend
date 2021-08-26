@@ -13,13 +13,6 @@
 
 <body>
 
-    <h1 class="green-text"><%= pageTitle %></h1>
-  <% users.map((user) => { %>
-  <li><%= user.first_name %></li>
-  <li><%= user.last_name %></li>
-  <% }) %>
-
- <div><%console.log(users)%></div>
  
   <!-- <a href="/users/create">Dheeraj Bisht</a> -->
     
@@ -35,22 +28,7 @@
                 <div class="right_one_Inner">
                     
                     <form id="myform" action="/users" method="post" >
-
-                        <div class="block">
-                            <div class="names">
-                               
-                                <input type="text" class="input" id="mail" placeholder="First Name" name="first_name" required>
-
-                            </div>
-                        </div>
-                         
-                        <div class="block">
-                            <div class="names">
-                              
-                                <input type="text" class="input" id="psw" placeholder="Last Name" name="last_name"
-                                    required>
-                            </div>
-                        </div>
+ 
                          
                          <div class="block">
                             <div class="names">
@@ -67,8 +45,7 @@
                                     required>
                             </div>
                         </div>
-                       
-                       <button type="submit">Add Users</button>
+                  
                     </form>
                     <button onclick="login()">LOG IN</button>
 
@@ -80,7 +57,7 @@
 
             <div class="right_one_down">
                 <div class="right_one_down-1">
-                    <a class="link" href="signUpPage.html" style="color: #f16521; font-family: 'Fira Sans', sans-serif;">New to Pepperfry? Register Here</a>
+                    <a class="link" href="/users/signup" style="color: #f16521; font-family: 'Fira Sans', sans-serif;">New to Pepperfry? Register Here</a>
                 </div>
                 <div class="right_one_down-2">
                     <span class="media">OR Continue with</span>

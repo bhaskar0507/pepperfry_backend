@@ -4,34 +4,35 @@ const router = express.Router();
 
 const User = require("../models/user.model");
 
-router.get("/create", function (req, res) {
-  res.render("users/login_page", {
-    // first_name: req.query.first_name,
-    // last_name: req.query.last_name,
-    // email: req.query.email
-  });
+router.get("/login", function (req, res) {
+ return res.render("users/login_page") 
+  
 });
 
-// router.get("/home", function (req, res) {
-//   res.render("products/homePage");
-// });
+ 
+router.get("/signup", function (req,res){
+  return res.render("users/signUpPage");
+});
+
+router.get("/home", function (req, res) {
+  return res.render("products/homePage");
+});
 
 router.post("", async function (req, res) {
-  console.log("request here", req.body);
-  const user = await User.create(req.body);
+  
+  const user = await User.create({
+    "first_name": req.body.uname,
+    "last_name": req.body.num,
+    "email": req.body.mail,
+    "password": req.body.psw,
+  });
 
   return res.send(user);
 });
 
 router.get("", async function (req, res) {
-  const users = await User.find().lean().exec();
-  const pageTitle = "Welcome to Users page";
-
-  // return res.send(users);
-  return res.render("users/allUsers", {
-    users: users,
-    pageTitle,
-  });
+  const user = await User.find().lean().exec();
+  return res.send(user);
 });
 
 module.exports = router;

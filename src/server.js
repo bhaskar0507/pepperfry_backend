@@ -19,9 +19,9 @@ app.set("view engine", "ejs");
 
 app.use("/users", userController);
 
-app.use("/products", productController);
+app.use("/products", productController); 
 
 app.listen(2345, async () => {
   await connect();
-  console.log("Listening on port 2345");
+  console.log("Listening on port 2345"); 
 });

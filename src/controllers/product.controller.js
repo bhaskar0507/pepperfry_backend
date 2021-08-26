@@ -13,9 +13,19 @@ router.get("/home", function (req, res) {
 });
 
 
-router.get("/productpage", function (req, res) {
-    return res.render("products/allSofasPage");
-});
+router.get("",async function (req, res) {
+    const product = await Product.find().lean().exec();  
+   return res.send(product)
+          
+ });
+    
+
+router.get("/productpage",async function (req, res) {
+     
+   return res.render("products/allSofasPage")
+        
+ });
+    
 
 router.get("/productinfo", function (req, res) {
     return res.render("products/productInfo");
@@ -33,9 +43,6 @@ router.get("/aboutus", function (req, res) {
     return res.render("products/footerAboutPage"); 
 });
 
-router.get("/signup", function (req,res){
-    return res.render("products/signUpPage");
-});
 
 
 
@@ -46,34 +53,8 @@ router.post("", async function (req, res) {
   return res.send(product);
 });
 
-router.get("/", function (req, res) {
- 
-     Product.find({}, function(err,products){
-        res.render("products/allSofasPage",{
-            products:products,
-          
-        }); 
-     }).lean().exec();
-  
-//   const title = "welcome to goa "
-    // return res.render("products/allSofasPage",{
-    //     products:products,
-    //     title:title
-    // });
-
-  });
 
   
 
-// router.get("", async function (req, res) {
-//   const users = await User.find().lean().exec();
-//   const pageTitle = "Welcome to Users page";
-
-//   // return res.send(users);
-//   return res.render("users/allUsers", {
-//     users: users,
-//     pageTitle,
-//   });
-// });
 
 module.exports = router;

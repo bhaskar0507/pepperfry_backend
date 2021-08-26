@@ -77,21 +77,25 @@
     //     "cutPrice": 85999,
     // }
 
+ 
 
-    var productData = product;
-    console.log(productData)
+  
+    // var productData = product;
+    // console.log(productData)
 
-if (localStorage.getItem("productData") == null) {
-    localStorage.setItem("productData", JSON.stringify(productData));
-}
+// if (localStorage.getItem("productData") == null) {
+//     localStorage.setItem("productData", JSON.stringify(productData));
+// }
+ 
+ 
+//   console.log('products:', products)
 
-
-function showProducts(d) {
-
-    let productData = d;
+function showProducts(productData) {
+    
+    
     let card_div = document.getElementById("main-card");
     card_div.innerHTML = null;
-
+    
     productData.forEach(function(el){
         
         let card = document.createElement("div");
@@ -141,17 +145,25 @@ function showProducts(d) {
 
 }
 
-showProducts(JSON.parse(localStorage.getItem("productData")))
+// showProducts(JSON.parse(localStorage.getItem("productData")))
+
+fetch(`http://localhost:2345/products`)
+.then(function(res){
+    return res.json();           
+}).then(function (res){
+    localStorage.setItem("productData", JSON.stringify(res));
+     showProducts(res);
+})
 
 
- 
+
 
 function sortLH() {
     
-    let Products = JSON.parse(localStorage.getItem("productData"));
+        let Products = JSON.parse(localStorage.getItem("productData"));
 
     Products = Products.sort(function (a, b) {
-        if(a.brand.toLowerCase() < b.brand.toLowerCase()) return -1;
+            if(a.brand.toLowerCase() < b.brand.toLowerCase()) return -1;
         if(a.brand.toLowerCase() > b.brand.toLowerCase()) return 1;
         return 0;
     })
