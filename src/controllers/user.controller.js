@@ -5,12 +5,16 @@ const router = express.Router();
 const User = require("../models/user.model");
 
 router.get("/create", function (req, res) {
-  res.render("users/addUser", {
-    first_name: req.query.first_name,
-    last_name: req.query.last_name,
-    email: req.query.email,
+  res.render("users/login_page", {
+    // first_name: req.query.first_name,
+    // last_name: req.query.last_name,
+    // email: req.query.email
   });
 });
+
+// router.get("/home", function (req, res) {
+//   res.render("products/homePage");
+// });
 
 router.post("", async function (req, res) {
   console.log("request here", req.body);

@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 module.exports = () => {
   return mongoose.connect(
-    "mongodb+srv://dhaval:kCTT7Jm5itRHucJ@cluster0.gtzsr.mongodb.net/render?retryWrites=true&w=majority",
+    "mongodb+srv://rinku:yEtpV9td9fjt8X_@pepperfrydb.xpkce.mongodb.net/userDB?retryWrites=true&w=majority",
     {
       useNewUrlParser: true,
       useCreateIndex: true,
