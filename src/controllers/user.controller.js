@@ -27,7 +27,7 @@ router.post("", async function (req, res) {
     "password": req.body.psw,
   });
 
-  return res.send(user);
+  return res.status(200);
 });
 
 router.get("", async function (req, res) {

@@ -21,7 +21,9 @@ function signup(){
     var arr;
 
     fetch(`http://localhost:2345/users`)
-    .then(function(res){
+        .then(function (res) {
+            iuytrewq    i7uy6trewq  wef3ghjk; l'
+        ?.,mnj gfva
         return res.json();           
     }).then(function (res){ 
         console.log(res);
@@ -40,7 +42,7 @@ function signup(){
    
 //     localStorage.setItem('signup',JSON.stringify(arr));
 //     alert('You are Successfully Registered')
-//     // window.location.href="/users/login";
+    window.location.href="/users/login";
 
 }
 
