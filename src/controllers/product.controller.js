@@ -28,7 +28,19 @@ router.get("/productpage",async function (req, res) {
     
 
 router.get("/productinfo", function (req, res) {
-    return res.render("products/productInfo");
+  
+  res.render("products/productInfo",{
+    
+    name: req.query.name,
+    price: req.query.price,
+    img: req.query.img,
+    brand: req.query.brand,
+    cutPrice: req.query.cutPrice,
+    discount:req.query.discount,
+    percentOff:req.query.percentOff
+  });
+
+   
 });
 router.get("/cart", function (req, res) {
     return res.render("products/cartPage");
