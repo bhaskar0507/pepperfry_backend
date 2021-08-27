@@ -513,13 +513,14 @@
     <!-- Navbar code end there -->
 
 
-
+ 
     <div id="body-wrap">
         <div id="container">
             <div class="row-PI">
                 <div id="image-galary" > 
                     <div id="div-image">
-                        <img id="image" src="https://ii1.pepperfry.com/media/catalog/product/a/m/568x625/amelia-1-seater-sofa-in-charcoal-grey-colour-by-casacraft-amelia-1-seater-sofa-in-charcoal-grey-colo-dgih4v.jpg" alt=""> 
+                       
+                        <img id="image" src=<%=img%> alt=""> 
                     </div>
                     <div id="all-images">
                         <span onclick="prevImage()"  class="arrow" id="left-arrow"><img src="https://ii1.pepperfry.com/images/svg/vip-arrow-left-2020.svg" alt=""></span>
@@ -534,9 +535,9 @@
                     </div>
                 </div>
                 <div id="product-content">
-                    <h1 id="name">Amelia 1 Seater Sofa in Charcoal Grey Colour</h1>
+                    <h1 id="name"><%=name%></h1>
                     <div id="brand-name-and-tag">
-                        <div id="brand-name">CasaCraft by Pepperfry</div>
+                        <div id="brand-name"><%=brand%></div>
                         <div id="fulfilled-tag">
                             <img src="https://ii1.pepperfry.com/images/svg/pf-fulfilled-truck-icon.svg" alt="">
                             <span>Pepperfry Fulfilled</span>
@@ -544,14 +545,14 @@
                     </div>
                     <div id="offer-price-wrap">
                         <span id="rupee-sign" class="red">₹</span>
-                        <span id="price" class="red">21,999</span>
-                        <span id="mrp-price" class="color969696">₹ <span id="cutPrice"> 35,999 </span>MRP</span>
+                        <span id="price" class="red"><%=price%> </span>
+                        <span id="mrp-price" class="color969696">₹ <span id="cutPrice"> <%=cutPrice%> </span>MRP</span>
                         <span class="color969696">(Inclusive of all taxes)</span>
                     </div>
                     <div id="total-saving">
                         <div id="saving-wrap">
                             <span class="color969696">Total Savings &nbsp;</span>
-                            <span class="fw" ><b>₹ 14,000 (39% Off)</b></span>
+                            <span class="fw" ><b> <%=discount%>  ( <%= percentOff %>% Off)</b></span>
                         </div>
                     </div>
                     <div id="promo-img">
