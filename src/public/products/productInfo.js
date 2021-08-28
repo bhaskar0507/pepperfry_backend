@@ -1,7 +1,9 @@
 var count = 0;
   
+let newProduct = JSON.parse(localStorage.getItem("currentItem"))
 
-const arrImage= ["https://ii1.pepperfry.com/media/catalog/product/a/m/568x625/amelia-1-seater-sofa-in-charcoal-grey-colour-by-casacraft-amelia-1-seater-sofa-in-charcoal-grey-colo-dgih4v.jpg","https://ii1.pepperfry.com/media/catalog/product/a/m/568x625/amelia-1-seater-sofa-in-charcoal-grey-colour-by-casacraft-amelia-1-seater-sofa-in-charcoal-grey-colo-adgt0i.jpg","https://ii1.pepperfry.com/media/catalog/product/a/m/568x625/amelia-one-seater-sofa-in-charcoal-grey-colour-by-casacraft-amelia-one-seater-sofa-in-charcoal-grey--gs9bs2.jpg","https://ii1.pepperfry.com/media/catalog/product/a/m/568x625/amelia-one-seater-sofa-in-charcoal-grey-colour-by-casacraft-amelia-one-seater-sofa-in-charcoal-grey--k5wzcm.jpg","https://ii1.pepperfry.com/media/catalog/product/a/m/568x625/amelia-one-seater-sofa-in-charcoal-grey-colour-by-casacraft-amelia-one-seater-sofa-in-charcoal-grey--thg9a1.jpg","https://ii1.pepperfry.com/media/catalog/product/a/m/568x625/amelia-one-seater-sofa-in-charcoal-grey-colour-by-casacraft-amelia-one-seater-sofa-in-charcoal-grey--wqsp0e.jpg","https://ii1.pepperfry.com/media/catalog/product/a/m/568x625/amelia-one-seater-sofa-in-charcoal-grey-colour-by-casacraft-amelia-one-seater-sofa-in-charcoal-grey--ean5xt.jpg","https://ii1.pepperfry.com/media/catalog/product/a/m/568x625/amelia-one-seater-sofa-in-charcoal-grey-colour-by-casacraft-amelia-one-seater-sofa-in-charcoal-grey--jtxqqt.jpg","https://ii1.pepperfry.com/media/catalog/product/a/m/568x625/amelia-one-seater-sofa-in-charcoal-grey-colour-by-casacraft-amelia-one-seater-sofa-in-charcoal-grey--dnlug3.jpg","https://ii1.pepperfry.com/media/catalog/product/a/m/568x625/amelia-one-seater-sofa-in-charcoal-grey-colour-by-casacraft-amelia-one-seater-sofa-in-charcoal-grey--thkvka.jpg"]
+const arrImage = newProduct.gallery;
+console.log(arrImage);
 function carousel() {
     
     console.log('count:', count)
