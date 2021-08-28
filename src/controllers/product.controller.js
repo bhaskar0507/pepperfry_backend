@@ -66,6 +66,12 @@ router.post("", async function (req, res) {
 });
 
 
+router.patch("/:id",async function (req, res) {
+    const product = await Product.findByIdAndUpdate(req.params.id, req.body, {new:true}).lean();  
+   return res.send(product)
+          
+ });
+    
   
 
 
