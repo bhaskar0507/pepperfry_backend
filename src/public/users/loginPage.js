@@ -1,18 +1,10 @@
 
 function login(){
 
-
-  fetch(`http://localhost:2345/users`)
-    .then(function(res){
-        return res.json();           
-    }).then(function (res){ 
-        console.log(res);
-       
-    
-    // const res = JSON.parse(localStorage.getItem('signup'));
-    for(var i = 0;i<res.length;i++){
-        let e = res[i].email;
-        let p = res[i].password;
+    const data = JSON.parse(localStorage.getItem('signup'));
+    for(var i = 0;i<data.length;i++){
+        let e = data[i].email;
+        let p = data[i].password;
    
         if(e==myform.mail.value && p == myform.psw.value){
            alert("LogIn Successful");
@@ -22,7 +14,7 @@ function login(){
        }
    
      return alert("Invalid Credential");
-    })
+
    }
    
         

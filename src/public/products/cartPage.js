@@ -124,52 +124,51 @@ selectWish.addEventListener("click", () => {
 })
 
 const closeCart = document.getElementById("cross");
+closeCart.style.fontSize = "50px";
 closeCart.addEventListener("click", () => {
     window.location.href="/products/productinfo"     
 })
 
-
- 
 
 
 
 
 
 function storeProduct() {
-   
-     
     
-    var product = {
-        img:"https://ii1.pepperfry.com/media/catalog/product/a/m/568x625/amelia-1-seater-sofa-in-charcoal-grey-colour-by-casacraft-amelia-1-seater-sofa-in-charcoal-grey-colo-dgih4v.jpg",
-        name:"Amelia 1 Seater Sofa in Charcoal Grey Colour",
-        brand: "CasaCraft by Pepperfry",
-        price: 21999,
-        cutPrice:35999
-    }
-
+    var product = JSON.parse(localStorage.getItem("currentItem"))
+    
     var arr;
-    arr = localStorage.getItem("cart")
-    if (arr == null) {
-        arr = [];
+    arr = JSON.parse(localStorage.getItem("cart"))
+    console.log(arr);
+ 
+    if (arr == null||arr.length==0) {
+        arr = []; 
         arr.push(product)
-        localStorage.setItem("cart", JSON.stringify(arr));
+    }
+    
+    
+    var flag = 0;
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i].name == product.name) {
+            flag = 1;
+        } 
     }
 
-    else {
-        arr = JSON.parse(localStorage.getItem("cart"))
-    }
+    if (flag == 0)
+    { arr.push(product)}
 
+    localStorage.setItem("cart", JSON.stringify(arr));
+    
     for (let i = 0; i < arr.length;i++)
     {  
         if(arr[i].name==product.name)
         {  
+            
             var addTOCart = document.getElementById("add-to-cart");
             addTOCart.innerHTML = `→ GO TO CART`;
             addTOCart.style.background = "linear-gradient(to right,#fdb622 0,#f57a2d 102%)";
-        
-            
-            
-        
+          
             addTOCart.addEventListener("click", function () {
                 window.location.href = "/products/cart";     
         

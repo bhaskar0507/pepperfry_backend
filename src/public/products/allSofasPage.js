@@ -1,4 +1,3 @@
- 
 
 function showProducts(productData) {
     
@@ -7,15 +6,17 @@ function showProducts(productData) {
     card_div.innerHTML = null;
     
     productData.forEach(function (el) {
-        
+        console.log(el);
         let card = document.createElement("div");
         card.addEventListener("click", function () {
             var discount = el.cutPrice - el.price ;
             var percentOff = Math.round((discount / el.cutPrice) * 100);
+          localStorage.setItem("currentItem",JSON.stringify(el))
+            
             window.location.href=`/products/productinfo?name=${el.name}&brand=${el.brand}&price=${el.price}&img=${el.img}&cutPrice=${el.cutPrice}&discount=${discount}&percentOff=${percentOff}`       
         })
-
-
+        
+        
         let img_div = document.createElement("div");
         let img = document.createElement("img");
         img.src = el.img
@@ -35,7 +36,7 @@ function showProducts(productData) {
         like.src = "https://ii1.pepperfry.com/images/svg/header-wishlist-icon-2021.svg";
         like_div.append(like);
         brand_div.append(brand, like_div);
-
+        
         let price_div = document.createElement("div");
         let price = document.createElement("div");
         price.innerHTML = `<br/><b>₹ ${el.price}</b> <span>₹ ${el.cutPrice}</span>`
@@ -50,11 +51,12 @@ function showProducts(productData) {
         let ship = document.createElement("div");
         ship.innerHTML = `<br/><img src="https://ii1.pepperfry.com/images/svg/clip-exp-ship-icon-2018.svg"/> Ships In 1 Day`;
         ship_div.append(ship);
-
+        
         card.append(img_div, name_div, brand_div, price_div, save_div, ship_div)
         card_div.append(card);
-    });
 
+    });
+    
 }
 
 // showProducts(JSON.parse(localStorage.getItem("productData")))
@@ -65,23 +67,23 @@ fetch(`http://localhost:2345/products`)
 }).then(function (res){
     localStorage.setItem("productData", JSON.stringify(res));
      showProducts(res);
-})
+    })
 
+    
 
-
-
+    
 function sortLH() {
     
         let Products = JSON.parse(localStorage.getItem("productData"));
-
+        
     Products = Products.sort(function (a, b) {
-            if(a.brand.toLowerCase() < b.brand.toLowerCase()) return -1;
+        if(a.brand.toLowerCase() < b.brand.toLowerCase()) return -1;
         if(a.brand.toLowerCase() > b.brand.toLowerCase()) return 1;
         return 0;
     })
-
+    
     showProducts(Products);
-
+    
 }
 
 function sortHL() {
@@ -93,9 +95,9 @@ function sortHL() {
         if(a.brand.toLowerCase() < b.brand.toLowerCase()) return 1;
         return 0;
     })
-
+    
     showProducts(Products);
-
+    
 }
 
 
@@ -196,5 +198,6 @@ function sortPrice60() {
 function gohome(){
     window.location.href = "../../views/products/homePage.ejs"
 }
+
 
  

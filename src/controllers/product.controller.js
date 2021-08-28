@@ -20,6 +20,7 @@ router.get("",async function (req, res) {
  });
     
 
+
 router.get("/productpage",async function (req, res) {
      
    return res.render("products/allSofasPage")
@@ -37,7 +38,8 @@ router.get("/productinfo", function (req, res) {
     brand: req.query.brand,
     cutPrice: req.query.cutPrice,
     discount:req.query.discount,
-    percentOff:req.query.percentOff
+    percentOff: req.query.percentOff,
+    
   });
 
    
