@@ -52,6 +52,7 @@ input ~ a ~ div{
     width: 20px;
     height: 20px;
     font-size: 18px;
+    transform: rotate(45deg);
     text-align: center;
     font-weight: lighter;
     border: 1px solid white;

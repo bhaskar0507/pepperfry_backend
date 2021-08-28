@@ -124,7 +124,7 @@ selectWish.addEventListener("click", () => {
 })
 
 const closeCart = document.getElementById("cross");
-closeCart.style.fontSize = "50px";
+// closeCart.style.fontSize = "50px";
 closeCart.addEventListener("click", () => {
     window.location.href="/products/productinfo"     
 })
