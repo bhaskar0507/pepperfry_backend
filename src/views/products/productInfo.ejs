@@ -20,34 +20,37 @@
     <style>
 
       
-        #header{
+#header{
             width:90%;
             margin:auto; 
          }
          #head1{
-             height:80px;
+            
              display:flex;
              background-color: white;
              position:fixed;
              width:90%;
              z-index: 999;
              top:0;
+             height:72px;
          }
          #head1 img{
              width:15%;
          }
          #search{
              display:flex;
-             border:1px solid grey;
-             margin: 18px 35px;
+             border:1px solid rgb(226,226,226);
+             margin: 16px 35px;
              width:130%;
              border-radius:5px;
-             background-color: rgb(241, 235, 235);
+             height: max-content;
+             background-color: rgb(248,248,248);
+             /* padding: 3px; */
            
          }
          #search input{
              width:90%;
-            background-color: rgb(241, 235, 235);
+            background-color: rgb(248,248,248);
              border-color: transparent;
          }
          #search img{
@@ -93,17 +96,18 @@
          nav{
              position:fixed;
              width:100%;
-             z-index:999;
-              margin-top:-60px; 
+             z-index:1;
+             margin-top: -58px;
+              border-top: 1px solid rgb(200, 200, 200);
+              border-bottom: 1px solid rgb(200, 200, 200);
             
          }
          nav .wrapper{
-             background-color:rgb(241, 237, 237);
+             background-color:rgb(255,255,255);
              max-width:90%;
              padding:0 30px;
              margin:auto;
-             margin-left:-10px;
-             margin-top:6px;
+             margin-left:-10px; 
              display:flex;
              align-items:center;
              box-shadow: border;
@@ -112,6 +116,7 @@
          .wrapper .nav-links{
               display:flex;
               margin:-5px;
+  
          }
          .nav-links li{
              list-style: none;
@@ -136,7 +141,6 @@
          .mega-box{
          position:absolute;
          top: 50px;
-         background:rgb(240, 231, 231);
          width:85%;
          left:0;
          margin-left:35px;
@@ -157,20 +161,21 @@
          .content .rowone header{
          color:black;
          font-size:20px;
+         border-bottom: 1px solid grey;
          font-weight:bold;
-         margin-left:20px;
          
          }
-         .content .rowone .mega-links{
-         border-left:1px solid black;
+         .content>div:nth-child(2n){
+             background-color: rgb(235,235,235);
+         }
+         ul{
+             padding: 0px;
          }
          .rowone .mega-links li{
          padding:10px 10px;
          }
          .rowone .mega-links li a{
-         
-         
-         display:block;
+            display:block;
          }
          
           </style>

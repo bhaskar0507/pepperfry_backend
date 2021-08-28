@@ -14,15 +14,19 @@
     width:90%;
     margin:auto;
     display:flex;
-    box-shadow: 1px 1px grey;
+    
+    justify-content: space-between;
+    align-items: center;
+    padding:3VH;
 }
-#headings{
-    display:flex;
-    margin:10px 300px;
-}
-#headings h3{
+/* #headings{
+     
+    margin:10px 300px; 
+   
+} */
+/* #headings h3{
     margin-top:10px;
-}
+} */
 #headings #cart img{
     width:20px;
 }
@@ -55,18 +59,18 @@
 }
 #content #content2{
     width:30%;
-    margin-top:20px;
-    box-shadow: 2px 2px grey;
-    background-color:rgb(240, 240, 240)
+    margin-top:20px; 
+    background-color:rgb(245,245,245)
 }
 #pin{
     display:flex;
    padding:10px;
-   background-color: rgb(241, 236, 236);
+   background-color: rgb(245,245,245);
 
 }
 #pin1{
     display:flex;
+    align-items: center;
 }
 #content #content1 #pin #pin1 img{
     width:20px;
@@ -74,21 +78,43 @@
 #pin input{
     margin-left:20px;
     height: 20px;
+    padding: 10px;
 }
 
 #pin button{
     background-color: black;
     color:white;
+    border: none;
+    padding: 10px;
+    width: 50px;
+
 }
 #green{
-    display:flex;
-    border:1px solid black;
-    padding:10px;
-    border-radius:5px;
+    font-size:15px;
+    margin-top: -20px;
+   
 }
 #green #title{
     width:50%;
     margin:10px;
+}
+.imageDiv{
+    width:15%;
+    margin-right: 2VW;
+}
+.imageDiv>img{
+    width:100%;
+    height:15VH;
+}
+.container{
+    display: flex;
+    flex-direction: row; 
+    border: 1px solid rgb(231,231,231);
+    padding:5VH 2vh;
+}
+.details{
+    margin-right: 5VW;
+   
 }
 #green #title #month{
     color:orangered;
@@ -149,6 +175,7 @@
     width:20%;
     background-color:orangered;
     color:white;
+    border: none;
 }
 .pricedata{
     display:flex;
@@ -169,10 +196,15 @@
 .pricedata3{
     display:flex;
 }
+#content2 {
+padding:2VW;
+font-size: 14px;
+background-color: rgb(245,245,245);
+    
+}
 #content2 p{
     margin-top:10px;
-   
-   
+    
 }
 #order_button{
     background-color:orangered;
@@ -180,6 +212,7 @@
     width:100%;
     margin-top:10px;
     height:40px;
+    border: none;
 }
 #emi p{
     color:rgb(27, 157, 209);
